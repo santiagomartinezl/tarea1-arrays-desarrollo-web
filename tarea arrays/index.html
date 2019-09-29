@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class>
+        ingrese un numero para aleatorizar
+        <input type="number" id="n" value="0">
+        <button onclick="aleatorizar()">aleatorizar</button>
+    </div>
+
+    <div id="grafica">
+    </div>
+
+    <div class="wrapper">
+        <div class="tcategoria">Categoria</div>
+        <div class="tconteo">Conteo</div>
+        <div class="cate1"><input type="text" id="categoria1" value="categoria 1"></div>
+        <div class="cate2"><input type="text" id="categoria2" value="categoria 2"></div>
+        <div class="cate3"><input type="text" id="categoria3" value="categoria 3"></div>
+        <div class="conte1"><input type="number" id="conteo1" value="0"></div>
+        <div class="conte2"><input type="number" id="conteo2" value="0"></div>
+        <div class="conte3"><input type="number" id="conteo3" value="0"></div>
+    </div>
+
+    <div id="barrasgraf"></div>
+
+    <button onclick="barras()">crear grafico</button>
+        
+    <script>
+        function aleatorizar(){
+
+            let nume=document.getElementById("n").value;
+
+            let scatter1={
+            x: new Array(nume),
+            y: new Array(nume),
+            mode: "makers"
+            };
+
+            for(let i=0;i<nume;i++){
+                scatter1.x[i]=i;
+                scatter1.y[i]=12+Math.random()*18;
+            }
+
+            let data=[scatter1];
+
+            Plotly.newPlot("grafica",data);
+        }
+
+        function barras(){
+            let info={
+                x:[document.getElementById("categoria1").value, document.getElementById("categoria2").value ,document.getElementById("categoria3").value],
+                y:[document.getElementById("conteo1").value,document.getElementById("conteo2").value,document.getElementById("conteo3").value],
+                type: "bar"
+            };
+
+            let data=[info];
+
+            Plotly.newPlot("barrasgraf",data);
+        }
+    </script>
+</body>
+</html>

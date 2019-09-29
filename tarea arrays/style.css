@@ -1,0 +1,45 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(fr,4);
+    grid-template-rows: repeat(fr,4);
+}
+
+.tcategoria{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tconteo{
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.cate1{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.cate2{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.cate3{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.conte1{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.conte2{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.conte3{
+    grid-column: 2;
+    grid-row: 4;
+}
